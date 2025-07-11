@@ -4,12 +4,15 @@ export default function HeroSection() {
   return (
     <section className="relative flex flex-col justify-center items-center py-20 md:py-32 bg-gradient-to-br from-[#7B1E23] via-[#B33B3B] to-[#7B1E23] overflow-hidden min-h-[70vh]">
       {/* Logo prominently displayed */}
-      <img
-        src="/logo-main.jpg"
-        alt="شعار أطايب"
-        className="w-40 md:w-56 h-auto mb-6 drop-shadow-2xl rounded-2xl bg-[#7B1E23]/80 p-2"
-        style={{ boxShadow: '0 8px 40px 0 rgba(80,0,0,0.25)' }}
-      />
+      <div className="flex flex-col items-center justify-center mb-8">
+        <img
+          src="/logo-main.jpg"
+          alt="شعار أطايب"
+          className="w-40 md:w-56 h-auto mb-4 drop-shadow-2xl rounded-2xl bg-[#7B1E23]/80 p-2"
+          style={{ boxShadow: '0 8px 40px 0 rgba(80,0,0,0.25)' }}
+        />
+        <h1 className="text-4xl font-extrabold text-red-900 drop-shadow-sm tracking-tight bg-white/80 px-6 py-2 rounded-full shadow-md">أطايب</h1>
+      </div>
       <div className="bg-white/90 shadow-2xl rounded-3xl px-8 py-10 max-w-xl w-full text-center border-t-8 border-[#B33B3B]">
         <h2 className="text-3xl md:text-4xl font-extrabold mb-4 text-[#7B1E23] leading-snug drop-shadow">
           أكل بيت؟ توصلك أطايب لين بابك
