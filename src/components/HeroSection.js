@@ -2,30 +2,24 @@ import React from "react";
 
 export default function HeroSection() {
   return (
-    <section className="relative overflow-hidden rounded-3xl shadow-xl bg-gradient-to-br from-red-800 to-red-600 p-8 flex flex-col items-center justify-center my-10 mx-auto max-w-3xl">
-      <div className="absolute inset-0 opacity-20 bg-[url('/meal-placeholder.png')] bg-center bg-cover pointer-events-none" />
-      <div className="relative z-10 flex flex-col items-center">
-        <div className="bg-white rounded-full shadow-lg p-4 mb-4 flex items-center justify-center">
-          <svg width="48" height="48" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <ellipse cx="24" cy="20" rx="16" ry="12" fill="#991B1B" />
-            <rect x="12" y="28" width="24" height="12" rx="6" fill="#991B1B" />
-            <ellipse cx="24" cy="20" rx="10" ry="8" fill="#F87171" />
-          </svg>
-        </div>
-        <h2 className="text-3xl md:text-5xl font-extrabold mb-4 drop-shadow text-white">
-          أكل بيت؟ توصلك أطايب لين بابك <span role="img" aria-label="food">🍲</span>
+    <section className="relative flex justify-center items-center py-16 md:py-24 bg-gradient-to-br from-red-900/80 to-red-700/70 overflow-hidden">
+      {/* Decorative Accent */}
+      <div className="absolute top-0 left-0 w-40 h-40 bg-red-200 opacity-20 rounded-full blur-2xl -z-10" />
+      <div className="absolute bottom-0 right-0 w-56 h-56 bg-red-400 opacity-10 rounded-full blur-3xl -z-10" />
+      {/* Card */}
+      <div className="bg-white/90 shadow-2xl rounded-3xl px-8 py-10 max-w-xl w-full text-center border-t-8 border-red-900">
+        <h2 className="text-3xl md:text-4xl font-extrabold mb-4 text-red-900 leading-snug drop-shadow">
+          أكل بيت؟ توصلك أطايب لين بابك <span className="align-middle">🍲</span>
         </h2>
-        <p className="mb-6 text-lg md:text-2xl text-white/90 font-medium">من شيفات سعوديين وشغوفين، نطبخ من القلب</p>
-        <div className="flex items-center justify-center mb-4">
-          <img src="/chef-hat.png" alt="Chef Hat" className="w-12 h-12 object-cover rounded-full mr-2" />
-          <a
-            href="#meals"
-            className="inline-block bg-gradient-to-l from-yellow-400 to-red-500 text-red-900 px-10 py-4 rounded-full font-extrabold text-xl shadow-lg hover:scale-105 transition-all border-4 border-white"
-          >
-            ابدأ الطلب
-          </a>
-        </div>
-        <div className="absolute inset-0 bg-gradient-to-br from-red-800 to-red-600 opacity-50 pointer-events-none" />
+        <p className="mb-8 text-lg md:text-xl text-red-800 font-medium">
+          من شيفات سعوديين وشغوفين، نطبخ من القلب
+        </p>
+        <a
+          href="#meals"
+          className="inline-block bg-gradient-to-l from-red-900 to-red-700 text-white px-10 py-4 rounded-full font-extrabold text-lg shadow-lg hover:scale-105 hover:from-red-800 hover:to-red-600 transition-all duration-200"
+        >
+          ابدأ الطلب
+        </a>
       </div>
     </section>
   );
