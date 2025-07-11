@@ -43,10 +43,10 @@ export default function App() {
   };
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-red-900 to-red-700 text-white">
-      <div className="container mx-auto px-2 py-4">
-        <div className="flex justify-between items-center mb-4">
-          <h1 className="text-3xl font-bold">أطايب</h1>
+    <div className="min-h-screen bg-white bg-[radial-gradient(ellipse_at_top_right,_var(--tw-gradient-stops))] from-red-50 via-white to-red-100">
+      <div className="container mx-auto px-2 py-6">
+        <div className="flex justify-between items-center mb-8">
+          <h1 className="text-4xl font-extrabold text-red-900 drop-shadow-sm tracking-tight bg-white/80 px-6 py-2 rounded-full shadow-md">أطايب</h1>
         </div>
         {adminMode ? (
           adminAuth ? (
@@ -55,9 +55,9 @@ export default function App() {
             <div className="fixed inset-0 flex items-center justify-center bg-black bg-opacity-50 z-50">
               <form
                 onSubmit={handlePassword}
-                className="bg-white text-red-900 rounded-xl shadow p-8 w-full max-w-xs text-center"
+                className="bg-white text-red-900 rounded-2xl shadow-2xl p-10 w-full max-w-xs text-center border-t-4 border-red-900"
               >
-                <h2 className="text-xl font-bold mb-4">لوحة الإدارة</h2>
+                <h2 className="text-2xl font-bold mb-4">لوحة الإدارة</h2>
                 <input
                   type="password"
                   className="border rounded px-3 py-2 w-full mb-3"
@@ -76,6 +76,7 @@ export default function App() {
         ) : (
           <>
             <HeroSection />
+            <div className="my-10" />
             <MealsGrid />
           </>
         )}

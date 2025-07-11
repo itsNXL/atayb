@@ -29,30 +29,29 @@ export default function MealsGrid() {
   }));
 
   return (
-    <section id="meals" className="grid md:grid-cols-2 gap-10">
+    <section id="meals" className="grid md:grid-cols-2 gap-12">
       {chefMeals.map((chef) => (
         <div
           key={chef.id}
-          className="bg-white/95 text-red-900 rounded-3xl shadow-2xl p-8 flex flex-col items-stretch border-t-8 border-red-900 relative overflow-hidden group transition-all duration-300 hover:scale-[1.02]"
+          className="bg-white text-red-900 rounded-3xl shadow-2xl p-10 flex flex-col items-stretch border-t-8 border-red-900 relative overflow-hidden group transition-all duration-300 hover:scale-[1.025]"
         >
-          <div className="flex items-center gap-5 mb-6">
+          <div className="flex items-center gap-6 mb-8">
             <div className="relative">
               <img
                 src={chef.imageUrl || "/meal-placeholder.png"}
                 alt={chef.name}
-                className="w-24 h-24 object-cover rounded-full border-4 border-red-200 shadow-lg bg-white"
+                className="w-28 h-28 object-cover rounded-full border-4 border-red-300 shadow-xl bg-white ring-4 ring-white"
               />
               {/* Optionally, featured badge */}
-              {/* <span className="absolute -top-2 -left-2 bg-red-700 text-white text-xs rounded-full px-3 py-1 font-bold shadow">مميز</span> */}
             </div>
             <div className="flex-1 text-right">
-              <div className="text-2xl font-extrabold mb-2 tracking-tight">{chef.name}</div>
+              <div className="text-2xl font-extrabold mb-2 tracking-tight text-red-900 drop-shadow">{chef.name}</div>
               {chef.whatsapp && (
                 <a
                   href={`https://wa.me/9665XXXXXXXX`}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="inline-block text-green-800 bg-green-100 rounded-full px-4 py-1 text-sm font-bold shadow hover:bg-green-200 transition"
+                  className="inline-block text-green-800 bg-green-50 rounded-full px-4 py-1 text-sm font-bold shadow hover:bg-green-200 transition"
                 >
                   تواصل مع الإدارة
                 </a>
@@ -70,21 +69,27 @@ export default function MealsGrid() {
             ) : (
               <ul className="flex flex-col gap-4">
                 {chef.meals.map(meal => (
-                  <li key={meal.id} className="flex items-center bg-red-50/70 rounded-xl shadow-sm p-4 group-hover:bg-red-100 transition-all">
-                    <img
-                      src={meal.imageUrl || "/meal-placeholder.png"}
-                      alt={meal.name}
-                      className="w-14 h-14 object-cover rounded-full border-2 border-red-300 mr-3 shadow"
-                    />
+                  <li key={meal.id} className="flex items-center bg-white rounded-2xl shadow p-5 hover:bg-red-50 transition-all border border-red-50">
+                    <div className="relative">
+                      <img
+                        src={meal.imageUrl || "/meal-placeholder.png"}
+                        alt={meal.name}
+                        className="w-16 h-16 object-cover rounded-full border-2 border-red-200 shadow mr-3 bg-white"
+                      />
+                      <span className="absolute -top-2 -left-2 bg-red-100 text-red-700 rounded-full px-2 py-1 text-xs font-bold shadow-sm flex items-center">
+                        <svg className="w-4 h-4 mr-1" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" d="M12 8c-1.1 0-2 .9-2 2s.9 2 2 2 2-.9 2-2-.9-2-2-2zm0 10c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4z" /></svg>
+                        وجبة
+                      </span>
+                    </div>
                     <div className="flex-1 mr-4 text-right">
-                      <div className="font-bold text-lg mb-1">{meal.name}</div>
-                      <span className="inline-block bg-red-200 text-red-900 rounded-full px-3 py-1 text-xs font-bold mr-2">{meal.price} ر.س</span>
+                      <div className="font-bold text-lg mb-1 text-red-900">{meal.name}</div>
+                      <span className="inline-block bg-red-100 text-red-900 rounded-full px-4 py-1 text-base font-bold mr-2 shadow">{meal.price} ر.س</span>
                     </div>
                     <a
                       href={`https://wa.me/9665XXXXXXXX?text=السلام عليكم، أبي أطلب وجبة ${meal.name} من الشيف ${chef.name} من أطايب 🍽️`}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="bg-gradient-to-l from-red-900 to-red-700 text-white px-5 py-2 rounded-full font-bold shadow hover:scale-105 hover:from-red-800 hover:to-red-600 transition-all"
+                      className="bg-gradient-to-l from-red-900 to-red-700 text-white px-6 py-2 rounded-full font-bold shadow-lg hover:scale-105 hover:from-red-800 hover:to-red-600 transition-all"
                     >
                       اطلبها واتساب
                     </a>
